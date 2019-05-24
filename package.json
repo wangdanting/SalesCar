@@ -9,7 +9,8 @@
     "tslint-check": "tslint-config-prettier-check ./tslint.json",
     "lint": "tslint -c tslint.json 'src/**/*.tsx'",
     "prettier": "prettier --write 'src/**/*.tsx'",
-    "lint-staged:ts": "tsc --noEmit && tslint -p \".\" -t stylish"
+    "lint-staged:ts": "tsc --noEmit && tslint -p \".\" -t stylish",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "react": "^16.8.6",
@@ -43,10 +44,12 @@
     }
   },
   "lint-staged": {
-    "**/*.{ts, tsx}": [
-      "pretty-quick --staged",
-      "yarn lint-staged:ts",
-      "git add"
-    ]
+    "linters": {
+      "*.{ts,tsx}": [
+        "pretty-quick --staged",
+        "npm run lint-staged:ts",
+        "git add"
+      ]
+    }
   }
 }

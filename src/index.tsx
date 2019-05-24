@@ -5,8 +5,8 @@
  * @format
  * @flow
  */
-import { Platform, StyleSheet, Text, View } from 'react-native';
 import React, { Component } from 'react';
+import { Platform, StyleSheet, Text, View } from 'react-native';
 
 const instructions = Platform.select({
   android: `Double tap R on your keyboard to reload, Shake or press menu button for dev menu`,
@@ -18,7 +18,7 @@ export default class Home extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
+        <Text style={styles.welcome}>Welcome tod React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
       </View>
