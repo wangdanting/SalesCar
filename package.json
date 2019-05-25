@@ -9,13 +9,15 @@
     "tslint-check": "tslint-config-prettier-check ./tslint.json",
     "prettier": "prettier --write 'src/**/*.tsx'",
     "lint-staged:ts": "tsc --noEmit && tslint -p \".\" -t stylish",
-    "lint": "lint-staged:ts"
+    "lint": "yarn lint-staged:ts"
   },
   "dependencies": {
     "@ant-design/react-native": "^3.1.8",
+    "@react-native-community/async-storage": "^1.4.1",
     "dva-core": "^1.4.0",
     "react": "^16.8.6",
     "react-native": "0.59.8",
+    "react-navigation": "^3.11.0",
     "react-redux": "^7.0.3"
   },
   "devDependencies": {
@@ -32,6 +34,7 @@
     "lint-staged": "^8.1.7",
     "metro-react-native-babel-preset": "^0.54.1",
     "prettier": "^1.17.1",
+    "pretty-quick": "^1.11.0",
     "react-native-typescript-transformer": "^1.2.12",
     "react-test-renderer": "16.8.3",
     "tslint": "^5.16.0",
@@ -52,7 +55,7 @@
     "linters": {
       "*.{ts,tsx}": [
         "pretty-quick --staged",
-        "npm run lint-staged:ts",
+        "yarn lint-staged:ts",
         "git add"
       ]
     }
