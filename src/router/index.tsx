@@ -1,9 +1,17 @@
 import {
-  createAppContainer,
   createBottomTabNavigator,
   createStackNavigator,
   createSwitchNavigator,
 } from 'react-navigation';
+
+import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
+
+import {
+  createNavigationReducer,
+  createReactNavigationReduxMiddleware,
+  createReduxContainer,
+} from 'react-navigation-redux-helpers';
 
 import AuthLoadingScreen from '@/pages/AuthLoading';
 import Login from '@/pages/Login';
@@ -47,6 +55,21 @@ const AppNavigation = createSwitchNavigator(
   }
 );
 
-const AppContainer = createAppContainer(AppNavigation);
+export const routerReducer = createNavigationReducer(AppNavigation);
 
-export default AppContainer;
+export const routerMiddleware = createReactNavigationReduxMiddleware((state: any) => state.router);
+
+const App = createReduxContainer(AppNavigation);
+
+class Router extends PureComponent<any> {
+  render() {
+    const { dispatch, router } = this.props;
+    return <App dispatch={dispatch} state={router} />;
+  }
+}
+
+const mapStateToProps = state => ({
+  router: state.router,
+});
+
+export default connect(mapStateToProps)(Router);
