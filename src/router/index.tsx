@@ -1,23 +1,20 @@
-import {
-  createBottomTabNavigator,
-  createStackNavigator,
-  createSwitchNavigator,
-} from 'react-navigation';
-
-import React, { PureComponent } from 'react';
-import { connect } from 'react-redux';
-
-import {
-  createNavigationReducer,
-  createReactNavigationReduxMiddleware,
-  createReduxContainer,
-} from 'react-navigation-redux-helpers';
-
 import AuthLoadingScreen from '@/pages/AuthLoading';
 import Login from '@/pages/Login';
 import Manage from '@/pages/Manage';
 import Order from '@/pages/Order';
 import PersonalCenter from '@/pages/PersonalCenter';
+import React, { PureComponent } from 'react';
+import {
+  createBottomTabNavigator,
+  createStackNavigator,
+  createSwitchNavigator,
+} from 'react-navigation';
+import {
+  createNavigationReducer,
+  createReactNavigationReduxMiddleware,
+  createReduxContainer,
+} from 'react-navigation-redux-helpers';
+import { connect } from 'react-redux';
 
 const AuthStack = createStackNavigator(
   { Login },
