@@ -1,4 +1,5 @@
 import variables from '@/common/styles/variables';
+import LangProvider from '@/components/LangProvider';
 import PageLoading from '@/components/PageLoading';
 import appModel from '@/models';
 import dva from '@/utils/dva';
@@ -27,10 +28,12 @@ const options = {
 
 const app = dva(options);
 const App = app.start(
-  <Provider>
-    <Router />
-    <PageLoading />
-  </Provider>
+  <LangProvider>
+    <Provider>
+      <Router />
+      <PageLoading />
+    </Provider>
+  </LangProvider>
 );
 
 export default App;

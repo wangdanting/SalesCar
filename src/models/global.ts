@@ -1,7 +1,8 @@
 export default {
   namespace: 'global',
   state: {
-    loading: true,
+    loading: false,
+    lang: 'en',
   },
   reducers: {},
   effects: {},

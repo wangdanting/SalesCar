@@ -16,6 +16,8 @@
     "@react-native-community/async-storage": "^1.4.1",
     "dva-core": "^1.4.0",
     "react": "^16.8.6",
+    "react-intl": "^2.9.0",
+    "react-intl-native": "^2.1.2",
     "react-native": "0.59.8",
     "react-native-extended-stylesheet": "^0.11.2",
     "react-native-gesture-handler": "^1.2.1",

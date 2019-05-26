@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FormattedMessage } from 'react-intl-native';
 import { Text, View } from 'react-native';
 import { connect } from 'react-redux';
 
@@ -12,6 +13,7 @@ class Login extends Component<IProps> {
     return (
       <View>
         <Text>Login{test}</Text>
+        <FormattedMessage id="login.nav" />
       </View>
     );
   }
