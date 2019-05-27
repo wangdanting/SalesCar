@@ -26,7 +26,8 @@ const options = {
   onAction: [routerMiddleware],
 };
 
-const app = dva(options);
+export const app = dva(options);
+
 const App = app.start(
   <LangProvider>
     <Provider>

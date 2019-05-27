@@ -4,7 +4,14 @@ export default {
     loading: false,
     lang: 'en',
   },
-  reducers: {},
-  effects: {},
   subscriptions: {},
+  effects: {},
+  reducers: {
+    setState(state, { payload }) {
+      return {
+        ...state,
+        ...payload,
+      };
+    },
+  },
 };
